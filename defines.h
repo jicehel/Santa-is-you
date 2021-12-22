@@ -2,7 +2,6 @@
 
 #include <Gamebuino-Meta.h>
 
-const int nombreDeNotes = 58;
 const int tempsCycle = 50;
 
 enum {

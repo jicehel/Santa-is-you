@@ -12,6 +12,8 @@ extern uint8_t editorlevel[];
 
 int noteCourrante;
 int attente;
+uint8_t musiqueAJouer;
+extern int nombreDeNotes;
 
 uint8_t level[MAP_FULL_SIZE];
 uint8_t current_level = 0;
@@ -45,6 +47,8 @@ void convertTile(uint8_t from, uint8_t to);
 void initLevel(uint8_t id) {
   noteCourrante = 0;
   attente = 0;
+  nombreDeNotes = 30;
+  musiqueAJouer = current_level % nbMusiques;
   if (id == level_count)
   {
     for (uint8_t i = 0; i < MAP_FULL_SIZE; i++)
@@ -456,12 +460,32 @@ void startLevel(uint8_t id)
 void gameTick()
 {
   updateGame();
+  // SerialUSB.print("Musique : "),
+  // SerialUSB.print(musiqueAJouer);
   if (noteCourrante == nombreDeNotes) {
       noteCourrante = 0;
       attente = 50;
   }
   if (attente <= 0) {
-    attente = petitPapa(noteCourrante);
+    switch (musiqueAJouer){
+      case 0:
+        // SerialUSB.print("Petit Papa Noël");
+        // SerialUSB.println(noteCourrante);
+        attente = petitPapa(noteCourrante);
+        break;
+      case 1:
+        attente = jingleBells(noteCourrante);
+        break;
+      case 2:
+        attente = weWishYou(noteCourrante);
+        break;
+      case 3:
+        attente = petitRenne(noteCourrante);
+        break;
+      case 4:
+        attente = auRoyaume(noteCourrante);
+        break;        
+    }
     noteCourrante++;
   } else {
       attente --;
