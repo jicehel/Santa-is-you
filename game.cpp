@@ -3,11 +3,15 @@
 #include "tileset.h"
 #include "draw.h"
 #include "title.h"
+#include "music.h"
 
 #include "levels.h"
 
 uint8_t underlevel[MAP_FULL_SIZE];
 extern uint8_t editorlevel[];
+
+int noteCourrante;
+int attente;
 
 uint8_t level[MAP_FULL_SIZE];
 uint8_t current_level = 0;
@@ -38,8 +42,9 @@ bool isWord(uint8_t tile);
 void moveImpl(uint8_t i, int8_t delta, uint8_t min, uint8_t max);
 void convertTile(uint8_t from, uint8_t to);
 
-void initLevel(uint8_t id)
-{
+void initLevel(uint8_t id) {
+  noteCourrante = 0;
+  attente = 0;
   if (id == level_count)
   {
     for (uint8_t i = 0; i < MAP_FULL_SIZE; i++)
@@ -60,16 +65,13 @@ void updateGame()
 {
   if (!has_player)
   {
-    if ((gb.frameCount >> 2) % 2)
-    {
+    if ((gb.frameCount >> 2) % 2) {
       gb.lights.fill(RED);
-    }
-    else
-    {
+    } else {
       gb.lights.clear();
     }
   }
-
+  
   if (gb.buttons.pressed(BUTTON_DOWN))
   {
     moveDown();
@@ -179,6 +181,8 @@ void initRules()
   rules[LOVE]   = 0;
   rules[W_SWAP] = 0;
   rules[W_EMPTY]= IS_PUSH;
+  rules[BALL] = 0;
+  rules[W_BALL] = IS_PUSH;
 
   for (uint8_t i = 0; i < MAP_FULL_SIZE; i++)
   {
@@ -252,6 +256,7 @@ bool isSubject(uint8_t tile)
     case W_LAVA:
     case W_LOVE:
     case W_EMPTY:
+    case W_BALL:
       return true;
   }
   return false;
@@ -451,6 +456,16 @@ void startLevel(uint8_t id)
 void gameTick()
 {
   updateGame();
+  if (noteCourrante == nombreDeNotes) {
+      noteCourrante = 0;
+      attente = 50;
+  }
+  if (attente <= 0) {
+    attente = petitPapa(noteCourrante);
+    noteCourrante++;
+  } else {
+      attente --;
+  }
   if (CURRENT_SCREEN != GAME_SCREEN)
   {
     return;
