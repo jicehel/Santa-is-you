@@ -472,7 +472,6 @@ void gameTick()
         // SerialUSB.print("Petit Papa Noël");
         // SerialUSB.println(noteCourrante);
         attente = petitPapa(noteCourrante);
-        // attente = carol(noteCourrante);
         break;
       case 1:
         attente = jingleBells(noteCourrante);
@@ -491,7 +490,10 @@ void gameTick()
         break;   
       case 6:
         attente = carol(noteCourrante);
-        break;           
+        break;  
+      case 7:
+        attente = lesAnges(noteCourrante);
+        break;                      
     }
     noteCourrante++;
   } else {

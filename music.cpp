@@ -10,11 +10,11 @@ int petitPapa(int noteJouee) {
   const int tempo = 4; // plus c'est petit, plus c'est rapide
   // Musique du Petit Papa Noël, transcription: 
   // Notes
-  // do, do#, ré, ré#, mi, fa, fa#, sol, sol#, la, la#, si  silence
+  // do, do#, re, re#, mi, fa, fa#, sol, sol#, la, la#, si  silence
   // 0,  1  , 2 , 3 ,  4 , 5  , 6 , 7  , 8 ,   9 , 10,  11  -1
-  // Durée: 1=> croche   2 => Noire   3 => noire pointée   4=> blanche    6 => blanche pointée  8: ronde
+  // Duree: 1=> croche   2 => Noire   3 => noire pointée   4=> blanche    6 => blanche pointée  8: ronde
 
-  // sol => 7, do => 0, do => 0 do => 0, ré => 2, do => 0 etc...
+  // sol => 7, do => 0, do => 0 do => 0, re => 2, do => 0 etc...
   
 /*  const int melodie[][3] = { {7, 2, 2}, {0, 3, 2}, {0, 3, 2}, {0, 3, 2}, {2, 3, 2}, {0, 3, 6},
     {0, 3, 1}, {2, 3, 1}, {4, 3, 2}, {4, 3, 2}, {4, 3, 2}, {5, 3, 2}, {4, 3, 6},
@@ -144,9 +144,9 @@ int douceNuit(int noteJouee) {
   nombreDeNotes = 46;
   const int tempo = 5; // plus c'est petit, plus c'est rapide
   // Notes
-  // do, do#, ré, ré#, mi, fa, fa#, sol, sol#, la, la#, si  silence
+  // do, do#, re, re#, mi, fa, fa#, sol, sol#, la, la#, si  silence
   // 0,  1  , 2 , 3 ,  4 , 5  , 6 , 7  , 8 ,   9 , 10,  11  -1
-  // Durée: 1=> croche   2 => Noire   3 => noire pointée   4=> blanche    6 => blanche pointée  8: ronde
+  // Duree: 1=> croche   2 => Noire   3 => noire pointée   4=> blanche    6 => blanche pointée  8: ronde
   
   const int melodie[][3] = { {7, 2, 3 },{ 9, 2, 1}, { 7, 2, 2},{ 4, 2, 6}, 
                              {7, 2, 3 },{ 9, 2, 1}, { 7, 2, 2},{ 4, 2, 6},   
@@ -175,32 +175,69 @@ int carol(int noteJouee) {
   nombreDeNotes = 121;
   const int tempo = 4; // plus c'est petit, plus c'est rapide
   // Notes
-  // do, do#, ré, ré#, mi, fa, fa#, sol, sol#, la, la#, si  silence
+  // do, do#, re, re#, mi, fa, fa#, sol, sol#, la, la#, si  silence
   // 0,  1  , 2 , 3 ,  4 , 5  , 6 , 7  , 8 ,   9 , 10,  11  -1
-  // Durée: 1=> croche   2 => Noire   3 => noire pointée   4=> blanche    6 => blanche pointée  8: ronde
+  // Duree: 1=> croche   2 => Noire   3 => noire pointée   4=> blanche    6 => blanche pointée  8: ronde
   
   const int melodie[][3] = { /* { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 }, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 },  
   { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2 }, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 }, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 }, 
   { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2 }, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 }, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 },  */
-  { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2 }, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 }, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 }, 
-  { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2 }, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 }, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 }, 
-  { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2 }, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{4, 2, 2 },  
-  {11, 2, 2},{ 9, 2, 1}, {11, 2, 1},{ 7, 2, 2 }, {11, 2, 2},{ 9, 2, 1}, {11, 2, 1},{7, 2, 2 }, 
-  {11, 2, 2},{ 9, 2, 1}, {11, 2, 1},{ 7, 2, 2 }, {11, 2, 2},{ 9, 2, 1}, {11, 2, 1},{7, 2, 2 }, 
-  { 4, 3, 2},{ 4, 3, 1}, { 4, 3, 1},{ 2, 3, 1 }, {0, 3, 1 }, 
-  {11, 2, 2},{11, 2, 1}, {11, 2, 1},{ 9, 2, 1 }, {7, 2, 1 }, 
-  { 9, 2, 2},{ 9, 2, 1}, { 9, 2, 1},{11, 2, 1 }, {9, 2, 1 },
-  { 4, 2, 2},{ 4, 2, 1}, { 4, 2, 1},{ 4, 2, 2 }, 
-  {11, 1, 1},{ 1, 2, 1}, { 3, 2, 1},{ 4, 2, 1 }, { 5, 2, 1},{ 7, 2, 1},
-  { 9, 2, 1},{11, 2, 1}, { 9, 2, 2},{ 7, 2, 2}, 
-  {11, 1, 1},{ 1, 2, 1}, { 3, 2, 1},{ 4, 2, 1 }, { 5, 2, 1},{ 7, 2, 1},
-  { 9, 2, 1},{11, 2, 1}, { 9, 2, 2},{ 7, 2, 2}, 
-  { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2}, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2}, 
-  { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2}, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2},
-  { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2}, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2},
-  { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2}, { 7, 2, 2},{ 5, 2, 1}, { 7, 2, 1},{ 4, 2, 2}, 
-  {11, 2, 6},{ 9, 2, 4}, {11, 2, 2},{ 4, 2, 6} 
-     };   // 161 notes => 121 notes car sans la chanson sinon c'est trop répétitif...
+  {SOL, 2, NOIRE  },{ FA, 2, CROCHE }, { SOL, 2, CROCHE }, { MI, 2, NOIRE  }, {SOL, 2, NOIRE  }, { FA, 2, CROCHE }, 
+  {SOL, 2, CROCHE },{ MI, 2, NOIRE  }, { SOL, 2, NOIRE  }, { FA, 2, CROCHE }, {SOL, 2, CROCHE }, { MI, 2, NOIRE  }, 
+  {SOL, 2, NOIRE  },{ FA, 2, CROCHE }, { SOL, 2, CROCHE }, { MI, 2, NOIRE  }, {SOL, 2, NOIRE  }, { FA, 2, CROCHE },
+  {SOL, 2, CROCHE },{ MI, 2, NOIRE  }, { SOL, 2, NOIRE  }, { FA, 2, CROCHE }, {SOL, 2, CROCHE }, { MI, 2, NOIRE  }, 
+  {SOL, 2, NOIRE  },{ FA, 2, CROCHE }, { SOL, 2, CROCHE }, { MI, 2, NOIRE  }, {SOL, 2, NOIRE  }, { FA, 2, CROCHE }, {SOL, 2, CROCHE }, { MI, 2,NOIRE },  
+  { SI, 2, NOIRE  },{ LA, 2, CROCHE }, { SI, 2, CROCHE  }, {SOL, 2, NOIRE  }, { SI, 2, NOIRE  }, { LA, 2, CROCHE }, { SI, 2, CROCHE }, {SOL, 2,NOIRE }, 
+  { SI, 2, NOIRE  },{ LA, 2, CROCHE }, { SI, 2, CROCHE  }, {SOL, 2, NOIRE  }, { SI, 2, NOIRE  }, { LA, 2, CROCHE }, { SI, 2, CROCHE }, {SOL, 2,NOIRE }, 
+  { MI, 3, NOIRE  },{ MI, 3, CROCHE }, { MI, 3, CROCHE  }, { RE, 3, CROCHE }, { DO, 3, CROCHE }, 
+  { SI, 2, NOIRE  },{ SI, 2, CROCHE }, { SI, 2, CROCHE  }, { LA, 2, CROCHE }, {SOL, 2, CROCHE }, 
+  { LA, 2, NOIRE  },{ LA, 2, CROCHE }, { LA, 2, CROCHE  }, { SI, 2, CROCHE }, { LA, 2, CROCHE },
+  { MI, 2, NOIRE  },{ MI, 2, CROCHE }, { MI, 2, CROCHE  }, { MI, 2, NOIRE  }, 
+  { SI, 1, CROCHE },{DOd, 2, CROCHE }, {REd, 2, CROCHE  }, { MI, 2, CROCHE }, { FA, 2, CROCHE }, {SOL, 2, CROCHE },
+  { LA, 2, CROCHE },{ SI, 2, CROCHE }, { LA, 2, NOIRE   }, {SOL, 2, NOIRE } , 
+  { SI, 1, CROCHE },{DOd, 2, CROCHE }, {REd, 2, CROCHE  }, { MI, 2, CROCHE }, { FA, 2, CROCHE }, {SOL, 2, CROCHE },
+  { LA, 2, CROCHE },{ SI, 2, CROCHE }, { LA, 2, NOIRE   }, {SOL, 2, NOIRE  }, 
+  {SOL, 2, NOIRE  },{ FA, 2, CROCHE }, { SOL, 2, CROCHE }, { MI, 2, NOIRE  }, {SOL, 2, NOIRE },{ FA, 2, CROCHE }, {SOL, 2, CROCHE }, { MI, 2, NOIRE }, 
+  {SOL, 2, NOIRE  },{ FA, 2, CROCHE }, { SOL, 2, CROCHE }, { MI, 2, NOIRE  }, {SOL, 2, NOIRE },{ FA, 2, CROCHE }, {SOL, 2, CROCHE }, { MI, 2, NOIRE },
+  {SOL, 2, NOIRE  },{ FA, 2, CROCHE }, { SOL, 2, CROCHE }, { MI, 2, NOIRE  }, {SOL, 2, NOIRE },{ FA, 2, CROCHE }, {SOL, 2, CROCHE }, { MI, 2, NOIRE },
+  {SOL, 2, NOIRE  },{ FA, 2, CROCHE }, { SOL, 2, CROCHE }, { MI, 2, NOIRE  }, {SOL, 2, NOIRE },{ FA, 2, CROCHE }, {SOL, 2, CROCHE }, { MI, 2, NOIRE }, 
+  { SI, 2, BLANCHEp},{ LA, 2, BLANCHE} , { SI, 2, NOIRE } ,{ MI, 2, BLANCHEp} 
+};   // 161 notes => 121 notes car sans la chanson sinon c'est trop repétitif...
+  
+  float frequence; 
+  uint8_t duration;
+  if (melodie[noteJouee][0] > -1)
+      frequence = round(note[melodie[noteJouee][0]] * 2 * (melodie[noteJouee][1]-1));
+  duration = tempo * tempsCycle * melodie[noteJouee][2];
+  if (melodie[noteJouee][0] > -1) 
+      gb.sound.tone(round(frequence), duration);
+  return melodie[noteJouee][2] * tempo;
+}
+
+// Les anges dans nos campagnes
+int lesAnges(int noteJouee) {
+  nombreDeNotes = 83;
+  const int tempo = 5; // plus c'est petit, plus c'est rapide
+  // Notes
+  // do, do#, re,re#, mi, fa,fa#, sol,sol#, la, la#, si, silence
+  //  0,  1 , 2 , 3 , 4 , 5 , 6 , 7  , 8  , 9 , 10 , 11,   -1
+  // Duree: 1=> CROCHE   2 => NOIRE   3 => NOIRE pointée   4=> BLANCHE    6 => BLANCHE pointée  8: RONDE
+  
+  const int melodie[][3] = {  { LA, 2, NOIRE  },{ LA, 2, NOIRE }, { LA, 2, NOIRE }, { LA, 2, CROCHE }, { DO, 3, CROCHE },  
+     { DO, 3, NOIREp }, {LAd, 2, CROCHE} , { LA, 2, NOIRE }, { FA, 2, NOIRE }, { LA, 2, NOIRE }, { LA, 2, CROCHE } , { SOL, 2, CROCHE } ,  
+     { LA, 2, NOIRE  }, { LA, 2, CROCHE }, { DO, 3, CROCHE}, { DO, 3, NOIREp}, {LAd, 2, CROCHE}, { LA, 2, BLANCHE},
+     { LA, 2, NOIRE  }, { LA, 2, NOIRE  }, { LA, 2, NOIRE }, { LA, 2, CROCHE}, { DO, 3, CROCHE },  
+     { DO, 3, NOIREp }, {LAd, 2, CROCHE} , { LA, 2, NOIRE }, { FA, 2, NOIRE }, { LA, 2, NOIRE }, { LA, 2, CROCHE } , { SOL, 2, CROCHE } ,  
+     { LA, 2, NOIRE  }, { LA, 2, CROCHE }, { DO, 3, CROCHE}, { DO, 3, NOIREp}, {LAd, 2, CROCHE}, { LA, 2, BLANCHE},  
+     { DO, 3, BLANCHE}, { RE, 3, CROCHE} , { DO, 3, CROCHE}, {LAd, 2, CROCHE}, { LA, 2, CROCHE },
+     { LA, 2, BLANCHE}, { DO, 3, CROCHE }, {LAd, 2, CROCHE}, { LA, 2, CROCHE}, {SOL, 2, CROCHE }, 
+     { LA, 2, BLANCHE}, {LAd, 2, CROCHE} , { LA, 2, CROCHE}, {SOL, 2, CROCHE}, { FA, 2, CROCHE }, {SOL, 2, NOIRE  } , {SOL, 2, NOIRE } , {DO, 2, BLANCHE } , 
+     { FA, 2, NOIRE  }, {SOL, 2, NOIRE } , { LA, 2, NOIRE} , {LAd, 2, NOIRE }, { LA, 2, BLANCHE}, {SOL, 2, BLANCHE} ,
+     { DO, 3, BLANCHE}, { RE, 3, CROCHE} , { DO, 3, CROCHE}, {LAd, 2, CROCHE}, { LA, 2, CROCHE },
+     { LA, 2, BLANCHE}, { DO, 3, CROCHE }, {LAd, 2, CROCHE}, { LA, 2, CROCHE}, {SOL, 2, CROCHE }, 
+     { LA, 2, BLANCHE}, {LAd, 2, CROCHE} , { LA, 2, CROCHE}, {SOL, 2, CROCHE}, { FA, 2, CROCHE }, {SOL, 2, NOIRE  } , {SOL, 2, NOIRE } , {DO, 2, BLANCHE } , 
+     { FA, 2, NOIRE  }, {SOL, 2, NOIRE } , { LA, 2, NOIRE} , {LAd, 2, NOIRE }, { LA, 2, BLANCHE}, {SOL, 2, BLANCHE} , { FA, 2, RONDE }
+  };   // 83 notes 
   
   float frequence; 
   uint8_t duration;
