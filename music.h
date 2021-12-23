@@ -1,6 +1,6 @@
 #pragma once
 
-const int nbMusiques = 5;
+const int nbMusiques = 7;
 
 // musiques
 int petitPapa(int noteJouee);
@@ -8,6 +8,8 @@ int jingleBells(int noteJouee);
 int weWishYou(int noteJouee);
 int petitRenne(int noteJouee);
 int auRoyaume(int noteJouee);
+int douceNuit(int noteJouee);
+int carol(int noteJouee);
 
 // fréquence associée à chaque note
 // do, do#, ré, ré#, mi, fa, fa#, sol, sol#, la, la#, si
