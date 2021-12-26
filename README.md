@@ -1,4 +1,4 @@
-![image](level editor/Santa.png)
+![image](Santa-is-you/level editor/Santa.jpg)
 # Santa-is-you
 Hacked version by Jicehel
 Original game: HEMPULI
