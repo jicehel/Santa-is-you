@@ -1,4 +1,4 @@
-<H1><img class="fit-picture" src="https://github.com/jicehel/Santa-is-you/blob/main/level%20editor/Santa.jpg" width="20%"> Santa-is-you</H1>
+<H1><img class="fit-picture" src="https://github.com/jicehel/Santa-is-you/blob/main/level%20editor/Santa.jpg" width="10%"> Santa-is-you <img class="fit-picture" src="https://github.com/jicehel/Santa-is-you/blob/main/level%20editor/Santa.jpg" width="10%"></H1>
 
 
 Hacked version by Jicehel
