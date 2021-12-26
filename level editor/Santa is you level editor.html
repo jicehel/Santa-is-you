@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Santa is you - level editor</title>
+	<style type="text/css">
+		html {
+			text-align: center;
+		}
+		#canvas,
+		#tiles {
+			padding-bottom: 20px;
+		}
+		#level, #level tr {
+			border: 0;
+		}
+		#level tr td {
+			width: 46px;
+			height: 46px;
+			border: 0;
+		}
+		#tiles div:hover, #level tr td:hover {
+			background-color: white;
+			background-blend-mode: difference;
+		}
+		#level {
+			border-collapse: collapse;
+			margin: auto;
+		}
+		#tiles div, #level tr td {
+			background-image: url('tiles.png');
+		}
+		#tiles div {
+			width: 48px;
+			height: 48px;
+			display: inline-block;
+			border: 3px black solid;
+		}
+		#tiles div:hover {
+			border: 3px yellow solid;
+		}
+		#tiles div.selected {
+			border: 3px red solid;
+		}
+		#level-data {
+			font-size: 20px;
+		}
+		.empty {
+			background-position: 0 0;
+		}
+		.w-santa {
+			background-position: 0 -48px;
+		}
+		.w-gift {
+			background-position: 0 -96px;
+		}
+		.w-tree {
+			background-position: 0 -144px;
+		}
+		.w-is {
+			background-position: 0 -192px;
+		}
+		.w-win {
+			background-position: 0 -240px;
+		}
+		.w-push {
+			background-position: 0 -288px;
+		}
+		.w-wall {
+			background-position: 0 -336px;
+		}
+		.santa {
+			background-position: 0 -384px;
+		}
+		.gift {
+			background-position: 0 -432px;
+		}
+		.tree {
+			background-position: 0 -480px;
+		}
+		.wall {
+			background-position: 0 -528px;
+		}
+		.w-stop {
+			background-position: 0 -576px;
+		}
+		.w-you {
+			background-position: 0 -624px;
+		}
+		.w-ice {
+			background-position: 0 -672px;
+		}
+		.ice {
+			background-position: 0 -720px;
+		}
+		.w-sink {
+			background-position: 0 -768px;
+		}
+		.w-lava {
+			background-position: 0 -816px;
+		}
+		.lava {
+			background-position: 0 -864px;
+		}
+		.w-kill {
+			background-position: 0 -912px;
+		}
+		.w-love {
+			background-position: 0 -960px;
+		}
+		.love {
+			background-position: 0 -1008px;
+		}
+		.w-swap {
+			background-position: 0 -1056px;
+		}
+		.w-empty {
+			background-position: 0 -1104px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Santa is you - Level editor</h1>
+	<div id="canvas">
+		<table id="level">
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+			<tr>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+				<td class="empty"></td>
+			</tr>
+		</table>
+	</div>
+	<div id="tiles">
+		<div class="santa"></div>
+		<div class="gift"></div>
+		<div class="wall"></div>
+		<div class="tree"></div>
+		<div class="ice"></div>
+		<div class="lava"></div>
+		<div class="love"></div>
+		<div class="empty"></div>
+		<div class="ball"></div>
+		<br>
+		<div class="w-santa"></div>
+		<div class="w-gift"></div>
+		<div class="w-wall"></div>
+		<div class="w-tree"></div>
+		<div class="w-ice"></div>
+		<div class="w-lava"></div>
+		<div class="w-love"></div>
+		<div class="w-empty"></div>
+		<div class="w-ball"></div>
+		<br>
+		<div class="w-you"></div>
+		<div class="w-push"></div>
+		<div class="w-stop"></div>
+		<div class="w-win"></div>
+		<div class="w-sink"></div>
+		<div class="w-kill"></div>
+		<div class="w-swap"></div>
+		<div class="w-is"></div>
+	</div>
+	<div>
+		<p><button id="generate">Generate level</button></p>
+		<textarea id="level-data" cols="100" rows="12">
+		</textarea>
+	</div>
+	<script type="text/javascript">
+		let selected = '';
+
+		let items = document.querySelectorAll('#tiles div');
+		for (let item of items) {
+			item.addEventListener('click', event => {
+				selected = item.className;
+				for (let i of items) {
+					i.classList.remove('selected');
+				}
+				item.classList.add('selected');
+			});
+		}
+
+		let cells = document.querySelectorAll('#level tr td');
+		for (let cell of cells) {
+			cell.addEventListener('click', event => {
+				cell.className = selected;
+			});
+		}
+
+		document.querySelector('#generate').addEventListener('click', event => {
+			let output = '';
+			let cells = document.querySelectorAll('#level tr td');
+			let id = 0;
+			for (let cell of cells) {
+				id++;
+
+				output += cell.className.replace('-', '_').toUpperCase() + ',';
+				if (id % 13 == 0)
+					output += "\n";
+				else
+				{
+					if (cell.className.length < 6) output += ' '.repeat(6 - cell.className.length);
+				}
+			}
+			document.querySelector('#level-data').value = output;
+		});
+	</script>
+</body>
+</html>
