@@ -175,8 +175,8 @@ void initRules()
   rules[WALL]   = 0;
   rules[W_STOP] = IS_PUSH;
   rules[W_YOU]  = IS_PUSH;
-  rules[W_SNOW] = IS_PUSH;
-  rules[SNOW]   = 0;
+  rules[W_ICE] = IS_PUSH;
+  rules[ICE]   = 0;
   rules[W_SINK] = IS_PUSH;
   rules[W_LAVA] = IS_PUSH;
   rules[LAVA]   = 0;
@@ -200,7 +200,7 @@ void updateRules()
   rules[GIFT] = 0;
   rules[TREE] = 0;
   rules[WALL] = 0;
-  rules[SNOW] = 0;
+  rules[ICE] = 0;
   rules[LAVA] = 0;
   rules[LOVE] = 0;
 
@@ -256,7 +256,7 @@ bool isSubject(uint8_t tile)
     case W_GIFT:
     case W_TREE:
     case W_WALL:
-    case W_SNOW:
+    case W_ICE:
     case W_LAVA:
     case W_LOVE:
     case W_EMPTY:
@@ -306,7 +306,7 @@ uint8_t getSubject(uint8_t tile)
     case W_WALL: return WALL;
     case W_TREE: return TREE;
     case W_GIFT: return GIFT;
-    case W_SNOW: return SNOW;
+    case W_ICE: return ICE;
     case W_LAVA: return LAVA;
     case W_LOVE: return LOVE;
     case W_EMPTY:return EMPTY;
