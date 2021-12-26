@@ -1,4 +1,6 @@
-| ![image](https://github.com/jicehel/Santa-is-you/blob/main/level%20editor/Santa.jpg) | # Santa-is-you |
+![image](https://github.com/jicehel/Santa-is-you/blob/main/level%20editor/Santa.jpg) # Santa-is-you
+
+
 Hacked version by Jicehel
 Original game: HEMPULI
 Ported on the META by Minirop
