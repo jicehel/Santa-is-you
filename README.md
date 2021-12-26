@@ -1,4 +1,4 @@
-![image](https://github.com/jicehel/Santa-is-you/blob/main/level%20editor/Santa.jpg) <H1>Santa-is-you</H1>
+<H1>![image](https://github.com/jicehel/Santa-is-you/blob/main/level%20editor/Santa.jpg) Santa-is-you</H1>
 
 
 Hacked version by Jicehel
