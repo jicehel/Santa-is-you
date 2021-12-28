@@ -124,14 +124,20 @@
 		.w-ball {
 			background-position: 0 -1200px;
 		}
+		body {
+			background-color: rgb(130,90,90);
+		}	
+		input[type="button"] {
+			font-size: 25px;
+		}
 	</style>
 </head>
-<body>
+<body> 
 	<table align = "center">
 		<tr>
-			<td width=20%><img class="fit-picture" src="Santa.jpg" alt="Santa Klaus"></td>
-			<td width=60% style="color:red;"><marquee width="100%" scrollamount="100%" scrolldelay="800"><h1>Santa is you - Level editor</h1></marquee></td>
-			<td width=20%><img class="fit-picture" src="Santa.jpg" alt="Santa Klaus"></td>
+			<td width=20%><img class="fit-picture" src="Santa.png" alt="Santa Klaus"></td>
+			<td width=60% style="color:yellow;"><marquee width="100%" scrollamount="100%" scrolldelay="800"><h1>Santa is you - Level editor</h1></marquee></td>
+			<td width=20%><img class="fit-picture" src="Santa.png" alt="Santa Klaus"></td>
 	</tr>
 	</table>
 	<div id="canvas">
@@ -319,7 +325,8 @@
 		<div class="w-is"></div>
 	</div>
 	<div>
-		<p><button id="generate">Generate level</button></p>
+		<p><button id="generate" height="50" width="200" style="background-color:green; color:yellow; font-size:25px;">&nbsp;&nbsp;Generate level&nbsp;&nbsp;</button></p>
+		<p>&nbsp;</p>
 		<textarea id="level-data" cols="100" rows="12">
 		</textarea>
 	</div>
