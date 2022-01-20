@@ -4,6 +4,20 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Santa is you - level editor</title>
+	<script type="text/javascript">
+		function saveLevel(sourceText, fileIdentity) {
+			var workElement = document.createElement("a");
+			if ('download' in workElement) {
+				workElement.href = "data:" + 'text/plain' + "charset=utf-8," + escape(sourceText);
+				workElement.setAttribute("download", fileIdentity);
+				document.body.appendChild(workElement);
+				var eventMouse = document.createEvent("MouseEvents");
+				eventMouse.initMouseEvent("click", true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null);
+				workElement.dispatchEvent(eventMouse);
+				document.body.removeChild(workElement);
+			} else throw 'File saving not supported for this browser';
+		}	
+	</script>
 	<style type="text/css">
 		html {
 			text-align: center;
@@ -133,6 +147,7 @@
 	</style>
 </head>
 <body> 
+    <!-- table pour afficher le titre de l'éditeur -->
 	<table align = "center">
 		<tr>
 			<td width=20%><img class="fit-picture" src="Santa.png" alt="Santa Klaus"></td>
@@ -140,8 +155,9 @@
 			<td width=20%><img class="fit-picture" src="Santa.png" alt="Santa Klaus"></td>
 	</tr>
 	</table>
+	<!-- table pour afficher les différentes cases du niveaux -->
 	<div id="canvas">
-		<table id="level">
+		<table id="level" style="cursor: none; caret-color: transparent;">
 			<tr>
 				<td class="empty"></td>
 				<td class="empty"></td>
@@ -294,7 +310,7 @@
 			</tr>
 		</table>
 	</div>
-	<div id="tiles">
+	<div id="tiles" style="cursor: none; caret-color: transparent;">
 		<div class="santa"></div>
 		<div class="gift"></div>
 		<div class="wall"></div>
@@ -325,12 +341,32 @@
 		<div class="w-is"></div>
 	</div>
 	<div>
-		<p><button id="generate" height="50" width="200" style="background-color:green; color:yellow; font-size:25px;">&nbsp;&nbsp;Generate level&nbsp;&nbsp;</button></p>
+	    <button id="saveButton" onclick="saveLevel(document.querySelector('#level-data').value, 'SANTALEVEL.SAV')" style="background-color:blue;font-size: 25px; height: 50px; width: 220px; color:yellow;">&nbsp;&nbsp;Save level&nbsp;&nbsp;</button>
+		<button id="generate" style="background-color:green;font-size: 25px; height: 50px; width: 220px; color:yellow;">&nbsp;Generate level&nbsp;</button>
+		<BR/><BR/>
+		<label for="fileToLoad" style="font-size: 25px;">Cliquer sur ce bouton pour charger un fichier&nbsp;&nbsp;</label>
+		<input type = "file" id="fileToLoad" name="fileToLoad" accept="SANTALEVEL*,.SAV" style="font-size: 25px;">
 		<p>&nbsp;</p>
 		<textarea id="level-data" cols="100" rows="12">
 		</textarea>
 	</div>
 	<script type="text/javascript">
+	
+		document.getElementById('fileToLoad').addEventListener('change', function() {
+			var file = new FileReader();
+			file.onload = () => {
+				document.querySelector('#level-data').value = file.result;
+				var tableau = (document.querySelector('#level-data').value).split(",");
+				let cells = document.querySelectorAll('#level tr td');
+				let id = 0;
+				for (let cell of cells) {
+					cell.className = tableau[id].replace(/^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g, '').toLowerCase();
+					id++;
+				};
+			}
+			file.readAsText(this.files[0]);
+		});
+		
 		let selected = '';
 
 		let items = document.querySelectorAll('#tiles div');
